@@ -1,1 +1,7 @@
 # County-Health-Data-Analysis
+Analyzing factors contributing to preventable hospitalization (2022)
+
+The analysis is based on the open source data available on the publicly available county health rankings official website - 2022 CHR CSV Analytic Data. The dataset consists of more than 700 columns for analysis and about 3000 rows. Some of the columns have been dropped based on missing values and based on relevancy for our analysis which I will be talking more about in the python notebook. The columns with less missing values have been imputed by median values of the rest of the values in the column. 
+The dataset has also been normalized by applying standard transformations and by looking at the histogram distribution of the final columns. After imputing and normalizing, the data was seem to be normally distributed. Correlation to our target variable was also one of the criteria for dropping columns by setting a minimum threshold of 0.1. 
+For further improvising our feature importance in addition to the correlation values, I decided to train different ML models such as Lasso, Elastic Net and Ridge for getting feature importance. I selected the model with the best accuracy and lowest MAE for selecting the best features. I also plotted pair plots for looking at the relationship between these variables. 
+I also used Boruta algorithm which is known for its feature selection capabilities. The intersection of the features found with Boruta and the ML model gave us the top features which impacts our target variable i.e., preventable hospitalization. 
